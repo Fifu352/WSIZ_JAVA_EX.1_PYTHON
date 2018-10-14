@@ -2,9 +2,18 @@
 # This is a tiny program, which should print out the multiplication table
 
 # Variable storing both the numbers and placeholders for the multiplication table
-table_of_values = [["|" + str(i * j) + "|" if i * j >= 10 else "|0" + str(i * j) + "|" for i in range(1, 10)] for j in
-                   range(1, 10)]
-print("Ex.1 13.10.2018\nMultiplication table:\n");
-for i in range(9):
-    for j in range(9): print(table_of_values[i][j], end="")
-    print()
+#V.1 with initialising variable
+
+# table_of_values = [["|" + str(i * j) + "|" if i * j >= 10 else "|0" + str(i * j) + "|" for i in range(1, 10)] for j in
+#                    range(1, 10)]
+# print("Ex.1 13.10.2018\nMultiplication table:\n");
+# for i in range(9):
+#     for j in range(9): print(table_of_values[i][j], end="")
+#     print()
+
+#V.1 with no variable initialising
+from itertools import product
+
+for i,j in product(range(1,10), range(1,10)):
+    print("|" + str(i * j) + "|" if i * j >= 10 else "|0" + str(i * j) + "|",   end="{}".format("\n" if j == 9 else ""))
+
